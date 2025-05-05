@@ -8,21 +8,9 @@ export default function Home() {
   return (
     <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-8 space-y-12">
       {/* Hero Section */}
-      <section className="py-8 md:py-16 lg:py-20 flex flex-col-reverse md:flex-row items-center gap-6 md:gap-8">
-        {/* Image shown at the top on mobile (order changed with flex-col-reverse) */}
-        <div className="flex-1 w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl relative mb-6 md:mb-0">
-          <Image 
-            src="/main/481111507_1192535472402245_7721528970129038988_n.jpg" 
-            alt="Koka izstrādājumi" 
-            fill 
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-            priority
-          />
-        </div>
-        
-        {/* Text content */}
-        <div className="flex-1 space-y-5 md:space-y-6 mt-2 md:mt-0">
+      <section className="py-8 md:py-16 lg:py-20 flex flex-col md:flex-row items-center gap-8">
+        {/* Text Content */}
+        <div className="flex-1 space-y-5 md:space-y-6 order-2 md:order-1">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center md:text-left">
             Roku darinātas koka <span className="text-amber-600">mākslas darbi</span>
           </h1>
@@ -45,6 +33,18 @@ export default function Home() {
               <Link href="/darbi">Apskatīt darbus</Link>
             </Button>
           </div>
+        </div>
+        
+        {/* Image - Display first on mobile, second on desktop */}
+        <div className="w-full md:flex-1 h-[350px] md:h-[400px] rounded-lg overflow-hidden shadow-xl relative mb-6 md:mb-0 order-1 md:order-2">
+          <Image 
+            src="/main/481111507_1192535472402245_7721528970129038988_n.jpg" 
+            alt="Koka izstrādājumi" 
+            fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            priority
+          />
         </div>
       </section>
 
