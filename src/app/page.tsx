@@ -9,8 +9,8 @@ export default function Home() {
     <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-8 space-y-12">
       {/* Hero Section */}
       <section className="py-8 md:py-16 lg:py-20 flex flex-col md:flex-row items-center gap-8">
-        {/* Text Content */}
-        <div className="flex-1 space-y-5 md:space-y-6 order-2 md:order-1">
+        {/* Text Content - First on mobile and desktop */}
+        <div className="flex-1 space-y-5 md:space-y-6 order-1 md:order-1">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center md:text-left">
             Roku darinātas koka <span className="text-amber-600">mākslas darbi</span>
           </h1>
@@ -35,8 +35,8 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Image - Display first on mobile, second on desktop */}
-        <div className="w-full md:flex-1 h-[350px] md:h-[400px] rounded-lg overflow-hidden shadow-xl relative mb-6 md:mb-0 order-1 md:order-2">
+        {/* Image - Display second on mobile and desktop */}
+        <div className="w-full md:flex-1 h-[350px] md:h-[400px] rounded-lg overflow-hidden shadow-xl relative mt-6 md:mt-0 md:mb-0 order-2 md:order-2">
           <Image 
             src="/main/481111507_1192535472402245_7721528970129038988_n.jpg" 
             alt="Koka izstrādājumi" 
