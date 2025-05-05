@@ -1,103 +1,173 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-8 space-y-12">
+      {/* Hero Section */}
+      <section className="py-12 md:py-16 lg:py-20 flex flex-col md:flex-row items-center gap-8">
+        <div className="flex-1 space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            Roku darinātas koka <span className="text-amber-600">mākslas darbi</span>
+          </h1>
+          <TextAnimate by="word" animation="blurInUp" className="text-lg text-muted-foreground">
+            Unikāli un augstas kvalitātes koka izstrādājumi - mājas zīmes, mēbeles un dekorācijas, kas
+            ienes siltumu un dabas pieskārienu jūsu mājā. Roku darināts Latvijā ar mīlestību un rūpību.
+          </TextAnimate>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button 
+              asChild 
+              className="bg-amber-600 hover:bg-amber-700 transition-colors"
+            >
+              <Link href="/kontakti">Pasūtīt tagad</Link>
+            </Button>
+            <Button 
+              asChild 
+              variant="outline" 
+              className="border-amber-600/70 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors"
+            >
+              <Link href="/darbi">Apskatīt darbus</Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div className="flex-1 h-[400px] w-full rounded-lg overflow-hidden shadow-xl relative">
+          <Image 
+            src="/main/481111507_1192535472402245_7721528970129038988_n.jpg" 
+            alt="Koka izstrādājumi" 
+            fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            priority
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-12">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Kāpēc izvēlēties mūsu koka izstrādājumus?
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-amber-200 hover:border-amber-500">
+            <CardHeader>
+              <CardTitle>Roku darināts</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Katrs izstrādājums ir rūpīgi darināts ar rokām no izejmateriāla līdz apdares darbiem, pievēršot uzmanību katrai detaļai.</p>
+            </CardContent>
+          </Card>
+          <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-amber-200 hover:border-amber-500">
+            <CardHeader>
+              <CardTitle>Augstas kvalitātes materiāli</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Izmantojam tikai ilgtspējīgus, augstas kvalitātes kokmateriālus, kas izturēs laika pārbaudi un ienesīs dabas skaistumu jūsu mājā.</p>
+            </CardContent>
+          </Card>
+          <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-amber-200 hover:border-amber-500">
+            <CardHeader>
+              <CardTitle>Individuāla pieeja</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>Katrs projekts ir unikāls un veidots atbilstoši jūsu vēlmēm - no mājas zīmēm līdz krēsliem un galdiem.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section className="py-12">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Mūsu koka izstrādājumu klāsts
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="relative overflow-hidden rounded-lg transition-all duration-300 hover:shadow-lg">
+            <div className="w-full">
+              <Image
+                src="/works/482301682_1198037755185350_1762068951578885760_n.jpg"
+                alt="Mājas zīme"
+                width={500}
+                height={350}
+                className="w-full h-64 object-cover object-center"
+              />
+            </div>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-semibold mb-2">Mājas zīmes</h3>
+              <p className="text-muted-foreground">Personalizētas koka mājas zīmes ar jūsu mājas nosaukumu, numuru vai unikālu dizainu.</p>
+            </CardContent>
+          </Card>
+          <Card className="relative overflow-hidden rounded-lg transition-all duration-300 hover:shadow-lg">
+            <div className="w-full">
+              <Image
+                src="/works/481153374_1192535599068899_6161729925117165000_n.jpg"
+                alt="Mēbeles"
+                width={500}
+                height={350}
+                className="w-full h-64 object-cover object-center"
+              />
+            </div>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-semibold mb-2">Koka mēbeles</h3>
+              <p className="text-muted-foreground">Roku darināti galdi, krēsli, plaukti un citas mēbeles, kas kļūs par jūsu interjera akcentu.</p>
+            </CardContent>
+          </Card>
+          <Card className="relative overflow-hidden rounded-lg transition-all duration-300 hover:shadow-lg">
+            <div className="w-full">
+              <Image
+                src="/works/482271542_1198038021851990_8879561520875790612_n.jpg"
+                alt="Dekorācijas"
+                width={500}
+                height={350}
+                className="w-full h-64 object-cover object-center"
+              />
+            </div>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-semibold mb-2">Interjera dekorācijas</h3>
+              <p className="text-muted-foreground">Dekoratīvi elementi, pulksteņi, svečturi un citi aksesuāri, kas papildinās jūsu mājas interjeru.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      
+      {/* Process Section */}
+      <section className="py-12 bg-slate-50 dark:bg-slate-900 rounded-lg p-8 mt-12">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Kā notiek process?
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center space-y-4">
+            <div className="bg-amber-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto text-xl font-bold">1</div>
+            <h3 className="text-xl font-semibold">Dizains</h3>
+            <p>Izstrādājam dizainu pēc jūsu vēlmēm vai piedāvājam savas idejas, kas piemērotas tieši jums.</p>
+          </div>
+          <div className="text-center space-y-4">
+            <div className="bg-amber-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto text-xl font-bold">2</div>
+            <h3 className="text-xl font-semibold">Izgatavošana</h3>
+            <p>Rūpīga koka atlase, apstrāde un izgatavošana, izmantojot tradicionālas galdniecības metodes un modernās tehnoloģijas.</p>
+          </div>
+          <div className="text-center space-y-4">
+            <div className="bg-amber-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto text-xl font-bold">3</div>
+            <h3 className="text-xl font-semibold">Piegāde</h3>
+            <p>Gatavā izstrādājuma piegāde vai saņemšana personīgi pēc jūsu izvēles un ērtībām.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-12 text-center space-y-6">
+        <h2 className="text-3xl font-bold">
+          Gatavs pasūtīt savu unikālo koka izstrādājumu?
+        </h2>
+        <TextAnimate by="word" animation="blurInUp" className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Sazinieties ar mums, lai apspriestu jūsu idejas un uzsāktu darbu pie jūsu sapņu mājas zīmes, koka mēbelēm vai citiem koka izstrādājumiem.
+        </TextAnimate>
+        <Button size="lg" className="bg-amber-600 hover:bg-amber-700 transition-colors duration-300 px-10 py-8 text-lg" asChild>
+          <Link href="/kontakti">Sazināties tagad</Link>
+        </Button>
+      </section>
     </div>
   );
 }
