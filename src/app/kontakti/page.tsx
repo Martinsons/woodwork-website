@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
 import { TextAnimate } from '@/components/magicui/text-animate';
 
@@ -33,7 +33,7 @@ export default function ContactPage() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: Record<string, string>) {
     toast.success('Paldies! Jūsu ziņojums ir nosūtīts. Sazināsimies ar jums drīzumā!');
     console.log(data);
     console.log('Files:', files);
